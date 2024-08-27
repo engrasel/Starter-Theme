@@ -1,0 +1,16 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "header_3Cfya3": {
+      "type": "header",
+      "settings": {
+        "link_list": "shopy-menu",
+        "sidebarMenu": "shopy-menu"
+      }
+    }
+  },
+  "order": [
+    "header_3Cfya3"
+  ]
+}

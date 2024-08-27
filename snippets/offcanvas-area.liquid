@@ -1,0 +1,87 @@
+<div class="offcanvas__area offcanvas__radius">
+    <div class="offcanvas__wrapper">
+       <div class="offcanvas__close">
+          <button class="offcanvas__close-btn offcanvas-close-btn">
+             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+       </div>
+       <div class="offcanvas__content">
+          <div class="offcanvas__top mb-70 d-flex justify-content-between align-items-center">
+             <div class="offcanvas__logo logo">
+                <a href="{{ shop.url }}">
+                   <img src="{{ settings.logo | image_url: width: 500  }}" alt="logo">
+                </a>
+             </div>
+          </div>
+          <div class="offcanvas__category pb-40">
+             <button class="tp-offcanvas-category-toggle">
+                <i class="fa-solid fa-bars"></i>
+                All Categories
+             </button>
+             <div class="tp-category-mobile-menu">
+                
+             </div>
+          </div>
+          <div class="tp-main-menu-mobile fix d-lg-none mb-40"></div>
+
+          <div class="offcanvas__contact align-items-center d-none">
+             <div class="offcanvas__contact-icon mr-20">
+                <span>
+                   <img src="assets/img/icon/contact.png" alt="">
+                </span>
+             </div>
+             <div class="offcanvas__contact-content">
+                <h3 class="offcanvas__contact-title">
+                   <a href="tel:098-852-987">004524865</a>
+                </h3>
+             </div>
+          </div>
+          <div class="offcanvas__btn">
+             <a href="contact.html" class="tp-btn-2 tp-btn-border-2">Contact Us</a>
+          </div>
+       </div>
+       <div class="offcanvas__bottom">
+          <div class="offcanvas__footer d-flex align-items-center justify-content-between">
+            
+            {% form 'localization', id:'country_form', class:'country_form' %}
+             <div class="offcanvas__currency-wrapper currency">
+                <span class="offcanvas__currency-selected-currency tp-currency-toggle" id="tp-offcanvas-currency-toggle">Currency : {{ localization.country.name }}</span>
+                <ul class="offcanvas__currency-list tp-currency-list">
+                  {% for country in localization.available_countries -%}
+                     <li data-lang="{{ country.iso_code }}" class="lang-input">{{ country.name  }}</li>
+                  {%- endfor %}
+                </ul>
+             </div>
+             <input type="hidden" id="country_iso" name="country_code" value="{{ localization.country.iso_code }}">
+            {% endform %}
+
+
+             <div class="offcanvas__select language">
+                <div class="offcanvas__lang d-flex align-items-center justify-content-md-end">
+                   {% comment %} <div class="offcanvas__lang-img mr-15">
+                      <img src="assets/img/icon/language-flag.png" alt="">
+                   </div> {% endcomment %}
+                   {% form 'localization', id:'language_form', class:'language_form' %}
+                   <div class="offcanvas__lang-wrapper">
+                      <span class="offcanvas__lang-selected-lang tp-lang-toggle" id="tp-offcanvas-lang-toggle">{{ localization.language.name }}</span>
+                      <ul class="offcanvas__lang-list tp-lang-list">
+
+                      {% for language in localization.available_languages %}
+                        <li data-lang="{{ language.iso_code }}" class="lang-input">{{ language.name  }}</li>
+                      {% endfor %}
+
+                      </ul>
+                   </div>
+                   <input type="hidden" id="language_iso" name="language_code" value="{{ localization.language.iso_code }}">
+                  {% endform %}
+                </div>
+             </div>
+
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="body-overlay"></div>

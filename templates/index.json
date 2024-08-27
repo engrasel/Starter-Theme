@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "slider_X9P7iy": {
+      "type": "slider",
+      "settings": {}
+    },
+    "collections_grid_MhEK6H": {
+      "type": "collections-grid",
+      "settings": {}
+    },
+    "feature_icons_L9mcfK": {
+      "type": "feature-icons",
+      "settings": {}
+    },
+    "collections_tab_8XYGPM": {
+      "type": "collections-tab",
+      "settings": {}
+    }
+  },
+  "order": [
+    "slider_X9P7iy",
+    "collections_grid_MhEK6H",
+    "feature_icons_L9mcfK",
+    "collections_tab_8XYGPM"
+  ]
+}
